@@ -1,29 +1,20 @@
-import streamlit as st
-import datetime
-import tkinter as tk
-from tkinter import messagebox
-
-# Diseño personalizado
-st.header("Aplicacón 1")
-
-
-
-def mostrar_fecha_hora():
-    fecha_actual = datetime.datetime.now()
-    mensaje = f"Fecha y hora actual:\n{fecha_actual}"
-    messagebox.showinfo("Fecha y hora actual", mensaje)
+import matplotlib.pyplot as plt
 
 def main():
-    ventana = tk.Tk()
-    ventana.title("Mostrar Fecha y Hora")
+    # Datos ficticios: Categorías y valores
+    categorias = ['Categoría A', 'Categoría B', 'Categoría C', 'Categoría D']
+    valores = [15, 24, 30, 8]
     
-    etiqueta = tk.Label(ventana, text="¿Deseas ver la fecha y hora actual?")
-    etiqueta.pack(padx=20, pady=20)
+    # Crear un gráfico de barras
+    plt.bar(categorias, valores, color='skyblue')
     
-    boton_mostrar = tk.Button(ventana, text="Mostrar Fecha y Hora", command=mostrar_fecha_hora)
-    boton_mostrar.pack()
+    # Personalizar el gráfico
+    plt.title('Gráfico de Barras')
+    plt.xlabel('Categorías')
+    plt.ylabel('Valores')
     
-    ventana.mainloop()
+    # Mostrar el gráfico
+    plt.show()
 
 if __name__ == "__main__":
     main()
