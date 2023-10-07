@@ -1,3 +1,4 @@
+import streamlit as st
 import matplotlib.pyplot as plt
 
 def main():
@@ -6,15 +7,16 @@ def main():
     valores = [15, 24, 30, 8]
     
     # Crear un gráfico de barras
-    plt.bar(categorias, valores, color='skyblue')
+    fig, ax = plt.subplots()
+    ax.bar(categorias, valores, color='skyblue')
     
     # Personalizar el gráfico
-    plt.title('Gráfico de Barras')
-    plt.xlabel('Categorías')
-    plt.ylabel('Valores')
+    ax.set_title('Gráfico de Barras')
+    ax.set_xlabel('Categorías')
+    ax.set_ylabel('Valores')
     
-    # Mostrar el gráfico
-    plt.show()
+    # Mostrar el gráfico en Streamlit
+    st.pyplot(fig)
 
 if __name__ == "__main__":
     main()
